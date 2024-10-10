@@ -21,8 +21,8 @@ class QRScannerScreen extends StatefulWidget {
 
 class _QRScannerScreenState extends State<QRScannerScreen> {
   final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
-  Barcode? result; // QR 코드 결과 저장 변수
-  QRViewController? controller; // QR 스캐너 컨트롤러
+  Barcode? result;
+  QRViewController? controller;
 
   @override
   void reassemble() {
@@ -65,7 +65,7 @@ class _QRScannerScreenState extends State<QRScannerScreen> {
     this.controller = controller;
     controller.scannedDataStream.listen((scanData) {
       setState(() {
-        result = scanData; // QR 코드 스캔 결과 저장
+        result = scanData;
       });
     });
   }
